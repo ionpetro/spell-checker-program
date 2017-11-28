@@ -31,6 +31,9 @@ public class Dictionary {
 
 	public String getValue(int x) {
 		return dictionary.get(x);
+	}
 
+	public static int getSize() {
+		return dictionary.size();
 	}
 }

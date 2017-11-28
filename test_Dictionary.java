@@ -10,5 +10,6 @@ public class test_Dictionary {
 
 	  //example
 	  System.out.println(""+dic.getValue(1234));
+	  System.out.println(""+dic.getSize());
   }
 }
