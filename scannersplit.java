@@ -6,6 +6,7 @@ public class scannersplit {
 	public static void main ( String[] args) {
 		Scanner scan = new Scanner(System.in);
 		String input = scan.nextLine();
+		input = input + " ";
 		String strippedInput = input.replaceAll("\\W ", " ");
 		ArrayList<String> Lekseis = new ArrayList<String>();
 		Scanner fromStr = new Scanner(strippedInput);
@@ -15,11 +16,12 @@ public class scannersplit {
 			int theboolean = setLekseis(helper, Lekseis);
 			if (theboolean == 0) {
 			Lekseis.add(helper);
-			System.out.println(Lekseis.get(i));
 			i++;
 			}
-
 		}
+	for (int counter = 0; counter < i; counter++) {
+	System.out.println(Lekseis.get(counter));
+	}
 	}
 
 	public static int setLekseis (String word, ArrayList<String> Lekseis) {
