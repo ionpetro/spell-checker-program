@@ -8,7 +8,7 @@ import javax.swing.border.TitledBorder;
 
 public class GUIMakerClass {
 
-	JFrame myFrame = new JFrame("Spell Checker Program");
+	JFrame myFrame = new JFrame("Javaholics Spell Checker Program");
 
 	JButton runButton = new JButton("Run");
 	JButton cancelButton = new JButton("Cancel");
@@ -62,6 +62,7 @@ public class GUIMakerClass {
 	}
 
 	public void testguisample() {
+		System.out.println("Please insert your text: ");
 		Scanner sc = new Scanner(System.in);
         String input = sc.nextLine();
 
@@ -70,6 +71,8 @@ public class GUIMakerClass {
     public void examplecode() {
 		System.out.println("Hello World");
 	}
+
+
 
 
 
