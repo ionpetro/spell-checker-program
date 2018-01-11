@@ -18,14 +18,24 @@ public class SpellChecker {
 
 
 	public static void main(String[]args) {
-		loadDictionary();
+		
+		
+		GUIMaker gmaker = new GUIMaker();
+		
+		gmaker.createGUI();
+		
+		
 	}
 		
 		
 	
 	
 	public static void loadDictionary() {
-       
+		System.out.println("Γεια σας. Είμαστε οι Javaholics και αυτό είναι το εργαλείο ορθογραφικού μας ελέγχου.Υποστηρίζει τις παρακάτω λειτουργίες");
+		System.out.println("1.Είσοδος κειμένου στα ελληνικά.");
+		System.out.println("2.Είσοδος κειμένου στα αγγλικά.");
+		System.out.println("3.Βρίσκει ορθογραφικά λάθη και προτείνει εναλλακτικές λέξεις.");	
+		System.out.println("");
 		System.out.println("Σε ποια γλώσσα θελετε να εισάγετε το κείμενο;");
 		System.out.println("1.Ελληνικά 2.Αγγλικά 3.Έξοδος");
 		
