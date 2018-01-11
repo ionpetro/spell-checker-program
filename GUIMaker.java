@@ -1,4 +1,3 @@
-
 import javax.swing.*;
 import java.awt.GridLayout;
 import java.awt.Color;
@@ -6,17 +5,22 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Scanner;
 import javax.swing.border.TitledBorder;
+import javax.swing.JOptionPane;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
 
 public class GUIMaker {
 
-	JFrame myFrame = new JFrame("Spell Checker Program");
+	JFrame myFrame = new JFrame("Javaholics Spell Checker Program");
 
 	JButton runButton = new JButton("Run");
 	JButton cancelButton = new JButton("Cancel");
-	JButton InsertTextButton = new JButton("InsertText");
+	JLabel msgLabel = new JLabel();
 
 	JPanel panel1 = new JPanel();
 	JPanel panel2 = new JPanel();
+	JPanel panel3 = new JPanel();
 
 	//Default Constructor
 	public GUIMaker() {};
@@ -31,26 +35,28 @@ public class GUIMaker {
 		cancelButton.setToolTipText("This is the button to cancel the operation");
 		cancelButton.setForeground(Color.red);
 
-        InsertTextButton.setToolTipText("This is the button to insert data");
-        InsertTextButton.setForeground(Color.gray);
+  
+        panel2.setBorder(new TitledBorder("Actions"));
+       
+	    panel2.add(runButton);
 
-        panel1.setBorder(new TitledBorder("Actions"));
-        panel1.add(InsertTextButton);
-	    panel1.add(runButton);
-		panel1.setSize(100,50);
 
-		panel2.setBorder(new TitledBorder("Cancel"));
-		panel2.add(cancelButton);
+		panel3.setBorder(new TitledBorder("Cancel"));
+		panel3.add(cancelButton);
 
+        panel1.setBorder(new TitledBorder("Welcome"));
+        panel1.setSize(300,200);
+        JLabel label = new JLabel("Welcome user this is our spell checking program!");
 
 		 //Adding actionListeners
 		 GUIListener myListener = new GUIListener();
 		 runButton.addActionListener(myListener);
          cancelButton.addActionListener(myListener);
-         InsertTextButton.addActionListener(myListener);
-
+        
+         panel1.add(label);
          myFrame.add(panel1);
 		 myFrame.add(panel2);
+		 myFrame.add(panel3);
 
 	     myFrame.setSize(600, 400);
 		 myFrame.setLocationRelativeTo(null);
@@ -62,15 +68,6 @@ public class GUIMaker {
 
 	}
 
-	public void testguisample() {
-		Scanner sc = new Scanner(System.in);
-        String input = sc.nextLine();
-
-    }
-
-    public void examplecode() {
-		System.out.println("Hello World");
-	}
 
 
 
@@ -78,10 +75,12 @@ public class GUIMaker {
 
 		public void actionPerformed(ActionEvent e) {
 			if (e.getSource() == runButton) {
-            	examplecode();
-		    } else if (e.getSource() == InsertTextButton) {
-				testguisample();
-			} else if (e.getSource() == cancelButton) {
+				
+			        myFrame.setVisible(false);
+			       
+                Dictionaries.loadDictionary();
+               
+		    }  else if (e.getSource() == cancelButton) {
 				System.exit(0);
 			}
 	    }
